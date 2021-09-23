@@ -1,47 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
     android:background="#557487"
-    android:layout_height="180dp">
+    android:orientation="vertical">
 
     <EditText
-        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/edit_name"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:hint="Введите имя"
+        android:inputType="textPersonName|textCapSentences"
+        android:paddingHorizontal="50dp"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@id/start_btn"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:inputType="textPersonName|textCapSentences"
-        android:textColor="@android:color/white"
-        android:gravity="center"
-        android:textSize="22sp"
-        android:hint="Введите имя"
-        android:paddingHorizontal="50dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="40dp"
-        app:layout_constraintVertical_bias="0.2"
-        android:id="@+id/edit_name"
-        android:layout_width="320dp"
-        android:layout_height="50dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
 
     <Button
-        app:layout_constraintTop_toBottomOf="@id/edit_name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:text="Начать"
-        android:padding="10dp"
         android:id="@+id/start_btn"
-        android:textColor="@android:color/white"
-        android:textSize="22sp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="20dp"
-        android:textAllCaps="false"
         android:background="@drawable/menu_title"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp" />
+        android:padding="10dp"
+        android:text="Начать"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_name" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

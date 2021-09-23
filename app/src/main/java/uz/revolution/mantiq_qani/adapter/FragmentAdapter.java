@@ -6,10 +6,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 import uz.revolution.mantiq_qani.R;
 import uz.revolution.mantiq_qani.model.MyData;
-
-import java.util.ArrayList;
 
 public class FragmentAdapter extends BaseAdapter {
 

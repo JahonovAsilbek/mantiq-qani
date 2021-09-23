@@ -2,48 +2,47 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:elevation="7dp"
-    android:background="@android:color/black">
+    android:background="@android:color/black"
+    android:elevation="7dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical">
 
         <TextView
-            android:layout_margin="1dp"
-            android:text="О программе"
             android:id="@+id/about_title"
-            android:textSize="28sp"
-            android:textColor="@android:color/white"
-            android:background="@drawable/menu_title"
-            android:gravity="center"
-            android:layout_width="350dp"
-            android:layout_height="70dp" />
-
-        <TextView
-            android:layout_margin="1dp"
-            android:background="@drawable/answer_back"
-            android:text="@string/about"
-            android:gravity="center"
-            android:id="@+id/about_text"
-            android:textSize="22sp"
-            android:textColor="@android:color/white"
-            android:layout_width="350dp"
-            android:layout_height="212dp" />
-
-        <Button
-            android:layout_margin="1dp"
-            android:background="@drawable/menu_title"
             android:layout_width="350dp"
             android:layout_height="70dp"
-            android:text="Назад"
-            android:id="@+id/about_cancel_btn"
+            android:layout_margin="1dp"
+            android:background="@drawable/menu_title"
+            android:gravity="center"
+            android:text="О программе"
             android:textColor="@android:color/white"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/about_text"
+            android:layout_width="350dp"
+            android:layout_height="212dp"
+            android:layout_margin="1dp"
+            android:background="@drawable/answer_back"
+            android:gravity="center"
+            android:text="@string/about"
+            android:textColor="@android:color/white"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/about_cancel_btn"
+            android:layout_width="350dp"
+            android:layout_height="70dp"
+            android:layout_margin="1dp"
+            android:background="@drawable/menu_title"
+            android:text="Назад"
             android:textAllCaps="false"
-            android:textSize="22sp"
-            />
+            android:textColor="@android:color/white"
+            android:textSize="22sp" />
 
     </LinearLayout>
 

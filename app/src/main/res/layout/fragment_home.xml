@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3C3F41">
+
+    <LinearLayout
+        android:id="@+id/action_bar1"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_marginLeft="6.5dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="6.5dp"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:background="#2196F3"
+            android:padding="14dp"
+            android:src="@drawable/ic_coin" />
+
+        <TextView
+            android:id="@+id/current_score"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="1.5dp"
+            android:layout_weight="1.5"
+            android:background="#2196F3"
+            android:gravity="center"
+            android:text="10"
+            android:textColor="@android:color/black"
+            android:textSize="25sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="1.5dp"
+            android:layout_weight="3"
+            android:background="#2196F3"
+            android:gravity="center|right"
+            android:paddingRight="15dp"
+            android:text="Уровень"
+            android:textColor="@android:color/black"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/level"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="1.5dp"
+            android:layout_weight="1"
+            android:background="#2196F3"
+            android:gravity="center|left"
+            android:text="1"
+            android:textColor="@android:color/black"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/total_score"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="1.5dp"
+            android:layout_weight="1.5"
+            android:background="#2196F3"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@android:color/black"
+            android:textSize="25sp" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:background="#2196F3"
+            android:padding="8dp"
+            android:src="@drawable/ic_dollar" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/time_show"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_margin="3dp"
+        android:gravity="center"
+        android:text="00:00:00"
+        android:textColor="@android:color/white"
+        android:textSize="28sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/action_bar1" />
+
+    <ImageButton
+        android:id="@+id/info_btn"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_margin="7dp"
+        android:background="@android:color/transparent"
+        android:elevation="0dp"
+        android:onClick="onInfoClick"
+        android:src="@drawable/ic_info_btn"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/action_bar1" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="7dp"
+        android:background="@drawable/image_shape"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@id/guide_1"
+        app:layout_constraintTop_toBottomOf="@id/time_show">
+
+        <TextView
+            android:id="@+id/question_show"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@android:color/white"
+            android:textSize="22sp" />
+
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/answer_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/guide_2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guide_1">
+
+        <Button
+            android:id="@+id/answer1"
+            style="@style/answer_style"
+            android:gravity="center"
+            android:onClick="OnAnswerClick"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/answer2"
+            style="@style/answer_style"
+            android:onClick="OnAnswerClick"
+            app:layout_constraintLeft_toRightOf="@id/answer1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/answer3"
+            style="@style/answer_style"
+            android:onClick="OnAnswerClick"
+            app:layout_constraintLeft_toRightOf="@id/answer2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/answer4"
+            style="@style/answer_style"
+            android:onClick="OnAnswerClick"
+            app:layout_constraintLeft_toRightOf="@id/answer3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/answer5"
+            style="@style/answer_style"
+            android:onClick="OnAnswerClick"
+            app:layout_constraintLeft_toRightOf="@id/answer4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/answer6"
+            style="@style/answer_style"
+            android:onClick="OnAnswerClick"
+            app:layout_constraintLeft_toRightOf="@id/answer5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/answer7"
+            style="@style/answer_style"
+            android:onClick="OnAnswerClick"
+            app:layout_constraintLeft_toRightOf="@id/answer6"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/answer8"
+            style="@style/answer_style"
+            android:onClick="OnAnswerClick"
+            app:layout_constraintLeft_toRightOf="@id/answer7"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/answer9"
+            style="@style/answer_style"
+            android:onClick="OnAnswerClick"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/answer1" />
+
+        <Button
+            android:id="@+id/answer10"
+            style="@style/answer_style"
+            android:onClick="OnAnswerClick"
+            app:layout_constraintLeft_toRightOf="@id/answer9"
+            app:layout_constraintTop_toBottomOf="@id/answer2" />
+
+        <Button
+            android:id="@+id/answer11"
+            style="@style/answer_style"
+            android:onClick="OnAnswerClick"
+            app:layout_constraintLeft_toRightOf="@id/answer10"
+            app:layout_constraintTop_toBottomOf="@id/answer3" />
+
+        <Button
+            android:id="@+id/answer12"
+            style="@style/answer_style"
+            android:onClick="OnAnswerClick"
+            app:layout_constraintLeft_toRightOf="@id/answer11"
+            app:layout_constraintTop_toBottomOf="@id/answer4" />
+
+        <Button
+            android:id="@+id/answer13"
+            style="@style/answer_style"
+            android:onClick="OnAnswerClick"
+            app:layout_constraintLeft_toRightOf="@id/answer12"
+            app:layout_constraintTop_toBottomOf="@id/answer5" />
+
+        <Button
+            android:id="@+id/answer14"
+            style="@style/answer_style"
+            android:onClick="OnAnswerClick"
+            app:layout_constraintLeft_toRightOf="@id/answer13"
+            app:layout_constraintTop_toBottomOf="@id/answer6" />
+
+        <Button
+            android:id="@+id/answer15"
+            style="@style/answer_style"
+            android:onClick="OnAnswerClick"
+            app:layout_constraintLeft_toRightOf="@id/answer14"
+            app:layout_constraintTop_toBottomOf="@id/answer7" />
+
+        <Button
+            android:id="@+id/answer16"
+            style="@style/answer_style"
+            android:onClick="OnAnswerClick"
+            app:layout_constraintLeft_toRightOf="@id/answer15"
+            app:layout_constraintTop_toBottomOf="@id/answer8" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/variant_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/hint_delete_btn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guide_2">
+
+        <Button
+            android:id="@+id/btn1"
+            style="@style/variant_style"
+            android:gravity="center"
+            android:onClick="OnVariantClick"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn2"
+            style="@style/variant_style"
+            android:onClick="OnVariantClick"
+            app:layout_constraintLeft_toRightOf="@id/btn1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn3"
+            style="@style/variant_style"
+            android:onClick="OnVariantClick"
+            app:layout_constraintLeft_toRightOf="@id/btn2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn4"
+            style="@style/variant_style"
+            android:onClick="OnVariantClick"
+            app:layout_constraintLeft_toRightOf="@id/btn3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn5"
+            style="@style/variant_style"
+            android:onClick="OnVariantClick"
+            app:layout_constraintLeft_toRightOf="@id/btn4"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn6"
+            style="@style/variant_style"
+            android:onClick="OnVariantClick"
+            app:layout_constraintLeft_toRightOf="@id/btn5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn7"
+            style="@style/variant_style"
+            android:onClick="OnVariantClick"
+            app:layout_constraintLeft_toRightOf="@id/btn6"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn8"
+            style="@style/variant_style"
+            android:onClick="OnVariantClick"
+            app:layout_constraintLeft_toRightOf="@id/btn7"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn9"
+            style="@style/variant_style"
+            android:onClick="OnVariantClick"
+            app:layout_constraintLeft_toRightOf="@id/btn8"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn10"
+            style="@style/variant_style"
+            android:onClick="OnVariantClick"
+            app:layout_constraintLeft_toRightOf="@id/btn9"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn11"
+            style="@style/variant_style"
+            android:onClick="OnVariantClick"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn1" />
+
+        <Button
+            android:id="@+id/btn12"
+            style="@style/variant_style"
+            android:onClick="OnVariantClick"
+            app:layout_constraintLeft_toRightOf="@id/btn11"
+            app:layout_constraintTop_toBottomOf="@id/btn2" />
+
+        <Button
+            android:id="@+id/btn13"
+            style="@style/variant_style"
+            android:onClick="OnVariantClick"
+            app:layout_constraintLeft_toRightOf="@id/btn12"
+            app:layout_constraintTop_toBottomOf="@id/btn3" />
+
+        <Button
+            android:id="@+id/btn14"
+            style="@style/variant_style"
+            android:onClick="OnVariantClick"
+            app:layout_constraintLeft_toRightOf="@id/btn13"
+            app:layout_constraintTop_toBottomOf="@id/btn4" />
+
+        <Button
+            android:id="@+id/btn15"
+            style="@style/variant_style"
+            android:onClick="OnVariantClick"
+            app:layout_constraintLeft_toRightOf="@id/btn14"
+            app:layout_constraintTop_toBottomOf="@id/btn5" />
+
+        <Button
+            android:id="@+id/btn16"
+            style="@style/variant_style"
+            android:onClick="OnVariantClick"
+            app:layout_constraintLeft_toRightOf="@id/btn15"
+            app:layout_constraintTop_toBottomOf="@id/btn6" />
+
+        <Button
+            android:id="@+id/btn17"
+            style="@style/variant_style"
+            android:onClick="OnVariantClick"
+            app:layout_constraintLeft_toRightOf="@id/btn16"
+            app:layout_constraintTop_toBottomOf="@id/btn7" />
+
+        <Button
+            android:id="@+id/btn18"
+            style="@style/variant_style"
+            android:onClick="OnVariantClick"
+            app:layout_constraintLeft_toRightOf="@id/btn17"
+            app:layout_constraintTop_toBottomOf="@id/btn8" />
+
+        <Button
+            android:id="@+id/btn19"
+            style="@style/variant_style"
+            android:onClick="OnVariantClick"
+            app:layout_constraintLeft_toRightOf="@id/btn18"
+            app:layout_constraintTop_toBottomOf="@id/btn9" />
+
+        <Button
+            android:id="@+id/btn20"
+            style="@style/variant_style"
+            android:onClick="OnVariantClick"
+            app:layout_constraintLeft_toRightOf="@id/btn19"
+            app:layout_constraintTop_toBottomOf="@id/btn10" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <LinearLayout
+        android:id="@+id/hint_delete_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_weight="0"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:weightSum="8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <ImageButton
+            android:id="@+id/hint"
+            android:layout_width="0dp"
+            android:layout_height="?actionBarSize"
+            android:layout_gravity="center"
+            android:layout_margin="6.5dp"
+            android:layout_weight="3"
+            android:background="@drawable/btn_back"
+            android:onClick="hint"
+            android:src="@drawable/ic_pencil"
+            android:text="$2"
+            android:textColor="#F1F7FA"
+            android:textSize="17sp" />
+
+        <ImageButton
+            android:id="@+id/menu"
+            android:layout_width="0dp"
+            android:layout_height="?actionBarSize"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="3dp"
+            android:layout_weight="2"
+            android:background="@drawable/btn_menu"
+            android:onClick="onMenuClick"
+            android:src="@drawable/ic_menu"
+            android:textSize="22sp"
+            tools:ignore="OnClick" />
+
+        <ImageButton
+            android:id="@+id/delete_letter"
+            android:layout_width="0dp"
+            android:layout_height="?actionBarSize"
+            android:layout_gravity="center"
+            android:layout_margin="6.5dp"
+            android:layout_weight="3"
+            android:background="@drawable/btn_next"
+            android:onClick="deleteLetter"
+            android:src="@drawable/ic_trash"
+            android:text="$2"
+            android:textColor="#F1F7FA"
+            android:textSize="17sp"
+            tools:ignore="OnClick" />
+
+
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false" />
+
+    <!--    <FrameLayout-->
+    <!--        android:clickable="false"-->
+    <!--        android:id="@+id/menu_container"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="uz.revolution.mantiq_qani.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="uz.revolution.mantiq_qani.fragment.MenuFragment"
+        android:label="MenuFragment" >
+        <action
+            android:id="@+id/action_menuFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_scoresFragment"
+            app:destination="@id/scoresFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="uz.revolution.mantiq_qani.fragment.AboutFragment"
+        android:label="AboutFragment" />
+    <fragment
+        android:id="@+id/scoresFragment"
+        android:name="uz.revolution.mantiq_qani.fragment.ScoresFragment"
+        android:label="ScoresFragment" />
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="uz.revolution.mantiq_qani.fragment.InfoFragment"
+        android:label="InfoFragment" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="uz.revolution.mantiq_qani.fragment.SettingsFragment"
+        android:label="SettingsFragment" />
+</navigation>

@@ -2,9 +2,11 @@ package uz.revolution.mantiq_qani.dataBase;
 
 import android.content.Context;
 import android.database.Cursor;
+
+import java.util.ArrayList;
+
 import uz.revolution.mantiq_qani.libs.DataBaseHelper;
 import uz.revolution.mantiq_qani.model.MyModel;
-import java.util.ArrayList;
 
 public class QuestionsData extends DataBaseHelper {
 
